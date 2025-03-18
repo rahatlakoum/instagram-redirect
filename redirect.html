@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редирект на Instagram</title>
+    <script type="text/javascript">
+        function redirect() {
+            // Deeplink для Instagram
+            const deeplink = "instagram://user?username=rahatlakoum";
+            // Резервная ссылка для браузера
+            const fallbackUrl = "https://www.instagram.com/rahatlakoum/";
+
+            // Попытка открыть deeplink
+            window.location.href = deeplink;
+
+            // Если deeplink не сработал, через 6 секунд перенаправляем на резервную ссылку
+            setTimeout(function() {
+                window.location.href = fallbackUrl;
+            }, 6000); // 6000 мс = 6 секунд
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    <p>Пожалуйста, подождите, вас перенаправляют...</p>
+</body>
+</html>
